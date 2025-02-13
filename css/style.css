@@ -141,10 +141,11 @@
     input:focus, .select-state:focus {
         border: 1px solid #404953;
     }
-    input:focus {
+    input:focus, textarea:focus, select:focus {
         background-color: rgb(167, 213, 228); /* transitions background color on input fields */
+        color: #212529;
     }
-    input::placeholder {
+    input::placeholder, textarea::placeholder {
         text-align: right; /* Aligns the placeholder text to the right */
         direction: rtl; 
         font-size: .75rem;
@@ -177,6 +178,11 @@
         margin-left: 10px; /* Added space between checkbox and label */
         cursor: pointer; 
         padding-bottom: 10px;
+    }
+
+    .check-interest:hover, .pick-format:hover {
+        font-weight: 700;
+        color: rgb(21, 82, 173);
     }
     .newsletter-format {
         font-size: 1rem;

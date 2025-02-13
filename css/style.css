@@ -56,7 +56,7 @@
 
     #getnews-text {
         text-align: center;
-        color: #999;
+        color: #545454;
         font-size: 1.25rem;
         line-height: 1;
     }
@@ -100,7 +100,7 @@
         margin-bottom: 2%;
         font-size: 1rem;
         font-weight: 500;
-        color: #888181;
+        color: #716b6b;
 
     }
     .contact-info label {
@@ -132,7 +132,7 @@
         border: 1px solid #dee2e6;
         padding: 10px;
         font-size: 1.2rem;
-        color: #6c757d;
+        color: #5f646d;
     }
     .select-state {
         font-size: .85rem;
@@ -233,7 +233,7 @@
         text-align: center;
         font-size: 1rem;
         font-style: italic;
-        color: #6c757d;
+        color: #656e76;
     }
 
     /* ************ Media Queries =================== */

@@ -5,32 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Unit3-Form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <header>
+      <h1 id="top-title">The code review</h1>
+    </header>
     <div id="wrapper">
-      <header>
-        <h1>The code review</h1>
-      </header>
       <main>
         <h1>Signup for our newsletter</h1>
-        <p>Get the latest news on how your code is doing right in your inbox</p>
+        <p id="getnews-text">Get the latest news on how your code is doing right in your inbox</p>
+        <hr id="line-thick">
+        <hr id="line-thin">
         <!-- Begining of form -->
         <form action="index.html" method="post"></form>
-        <fieldset>
-          <legend>Contact Information</legend>
-          <label for="name">Full Name</label>
-            <input type="text" id="full_name" name="full_name"><br>
-          <label for="email">Email Address</label>
-            <input type="email" id="email" name="customer_email"><br>
-          <label for="phone">Phone Number</label>
-            <input type="phone" id="phone" name="customer_phone"><br>
-          <label for="address">Address</label>
-            <input type="address" id="address" name="customer_address"><br>   
-          <label for="city">City</label>
-            <input type="city" id="city" name="customer_city"><br> 
-          <label for="state">State</label>
-            <select id="state" name="customer_state">
+        <fieldset id="contact-form-group">
+          <legend class="legend-heading">Contact Information</legend>
+          <div class="contact-info">
+            <label for="full_name">Full Name</label>
+            <input type="text" id="full_name" name="full_name" placeholder="Required" required>
+          </div>
+          <div class="contact-info">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="customer_email" placeholder="Required" required>
+          </div>
+          <div class="contact-info">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="customer_phone" placeholder="(XXX) XXX-XXXX">
+          </div> 
+          <div class="contact-info">
+            <label for="address">Street Address</label>
+            <input type="text" id="address" name="customer_address" placeholder="Enter a valid street Number"> 
+          </div> 
+          <div class="contact-info">
+            <label for="city">City</label>
+            <input type="text" id="city" name="customer_city" placeholder="Name of City"> 
+          </div> 
+          <div class="contact-info">
+            <label for="state">State</label>
+            <select class="select-state" id="state" name="customer_state">
+              <option value="">Choose state</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>
@@ -90,26 +107,47 @@
               <option value="PW">Palau</option>
               <option value="PR">Puerto Rico</option>
               <option value="VI">Virgin Islands</option>
-          </select><br>
-          <label for="zipcode">Zip Code</label>
-            <input type="text" id="zipcode" name="customer_zipcode"><br>      
+            </select>
+        </div> 
+        <div class="contact-info zipcode">
+            <label for="zipcode">Zip Code</label>
+            <input type="text" id="zipcode" name="customer_zipcode" maxlength="10" placeholder="Enter 5-digit zipcode">  
+        </div> 
         </fieldset>
+        <hr id="sec-split">
         <fieldset>
-          <legend>Newsletter</legend>
-            <label>Select the newsletters you would like to receive</label><br>
-              <input type="checkbox" id="html_news" value="interest_html" name="user_interest"><label for="html_news">HTML News</label><br>
-              <input type="checkbox" id="css_news" value="interest_css" name="user_interest"><label for="css_news">CSS News</label><br>  
-              <input type="checkbox" id="js_news" value="interest_js" name="user_interest"><label for="js_news">Business</label><br>
-            <br>
-            <label>Newsletter format</label><br>
-              <input type="radio" id="format_html" value="format_html" name="news_format"><label for="format_html">HTML</label><br>
-              <input type="radio" id="format_plaintext" value="format_plaintext" name="news_format"><label for="format_plaintext">Plain text</label><br>
-            <br>
-            <label for="other_topics">Other Topics you'd like to hear about</label><br>  
-              <textarea id="other_topics" name="other_topics"></textarea>  
+          <legend class="legend-heading">Newsletter</legend>
+            <label class="newsletter-area-text">Select the newsletters you would like to receive</label>
+              <div>
+                <input type="checkbox" id="html_news" value="interest_html" name="user_interest" checked>
+                <label class="check-interest" for="html_news">HTML News</label>
+              </div>
+              <div>
+                <input type="checkbox" id="css_news" value="interest_css" name="user_interest">
+                <label class="check-interest" for="css_news">CSS News</label>  
+              </div>
+              <div>
+                <input type="checkbox" id="js_news" value="interest_js" name="user_interest">
+                <label class="check-interest" for="js_news">Javascript News</label>
+              </div>         
+            <label class="newsletter-format-text">Newsletter format</label>
+              <div>
+                <input type="radio" id="format_html" value="format_html" name="news_format" checked>
+                <label class="pick-format" for="format_html">HTML</label>
+              </div>  
+              <div>
+                <input type="radio" id="format_plaintext" value="format_plaintext" name="news_format">
+                <label class="pick-format" for="format_plaintext">Plain text</label>
+              </div>
+            <label class="newsletter-area-text" for="other_topics">Other Topics you'd like to hear about</label>  
+              <textarea id="other_topics" name="other_topics"></textarea>
+              <p class="hint">* 200 character limit</p>  
         </fieldset>  
-        <button type="submit">Sign Up</button>
+        <button id="signup" type="submit">Sign Up</button>
       </main>
+      <footer>
+        <p>Copyright The Code review</p>
+      </footer>
   </div>
   </body>
 </html>
